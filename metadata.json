@@ -1,0 +1,6 @@
+{
+  "name": "Tanış Ol",
+  "description": "İki nəfərin real-time saniyəlik sinxronizasiya ilə bir-birini tanıması üçün sual-cavab və chat oyunu",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

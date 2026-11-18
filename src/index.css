@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #1A0509;      /* Dərin bordo-qara */
+    --bg-secondary: #2B0A11;    /* Tünd bordo */
+    --bg-card: #4A1219;         /* Bordo kartlar */
+    --accent-red: #8C1D2A;      /* Şərab qırmızısı */
+    --accent-gold: #E2B97A;     /* Şampan qızılı */
+    --accent-gold-dark: #C9A063;/* Tünd qızıl */
+    --text-primary: #F5E8D6;    /* Krem */
+    --text-secondary: #CDB9A3;  /* Solğun krem */
+    --border-gold: rgba(226, 185, 122, 0.25);
+    --border-gold-hover: rgba(226, 185, 122, 0.55);
+    --p1-gold: #E2B97A;
+    --p2-rose: #D98A8F;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+/* Luxury Bordo & Gold Atmospheric Background */
+.atmosphere-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 10% 15%, rgba(140, 29, 42, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(74, 18, 25, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(26, 5, 9, 0.95) 0%, #1A0509 100%);
+}
+
+/* Luxury Glassmorphism Card Style */
+.wine-card {
+  background: rgba(74, 18, 25, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(226, 185, 122, 0.15);
+  border-radius: 1.25rem;
+}
+
+.wine-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.wine-card-hover:hover {
+  background: rgba(74, 18, 25, 0.85);
+  border-color: var(--border-gold-hover);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(226, 185, 122, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Gold Pill Button Styles */
+.btn-gold {
+  background: linear-gradient(135deg, #E2B97A 0%, #C9A063 100%);
+  color: #1A0509;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(226, 185, 122, 0.25);
+  transition: all 0.25s ease;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #ECC88F 0%, #D4AB6F 100%);
+  box-shadow: 0 6px 20px rgba(226, 185, 122, 0.4);
+  transform: translateY(-1px);
+}
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-wine-outline {
+  background: transparent;
+  color: #E2B97A;
+  border: 1px solid rgba(226, 185, 122, 0.35);
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+.btn-wine-outline:hover {
+  background: rgba(226, 185, 122, 0.1);
+  border-color: #E2B97A;
+}
+
+/* 3D Perspective Card Container */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Custom Scrollbar for luxury dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 5, 9, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(226, 185, 122, 0.3);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 185, 122, 0.6);
+}
